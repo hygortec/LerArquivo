@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,24 @@ namespace TelaPrincipal
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void abrir(String caminho)
+        {
+            if (File.Exists(caminho))
+            {
+                Stream entrada = File.Open(caminho, FileMode.Open);
+                StreamReader leitor = new StreamReader(entrada);
+                string linha = leitor.ReadLine();
+                while (linha != null)
+                {
+                    MessageBox.Show(linha);
+                    linha = leitor.ReadLine();
+                }
+                leitor.Close();
+                entrada.Close();
+            }
+
         }
 
         private void acaoBotaoBuscar(object sender, EventArgs e)
@@ -33,7 +52,9 @@ namespace TelaPrincipal
             DialogResult caixaDialogo = this.openFileDialog.ShowDialog();
 
             //MessageBox.Show(Convert.ToString(dr));
-            MessageBox.Show(openFileDialog.FileName);
+            //MessageBox.Show(openFileDialog.FileName);
+            tbCaminho.Text = openFileDialog.FileName;
+            abrir(openFileDialog.FileName);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace TelaPrincipal
                 string linha = leitor.ReadLine();
                 while (linha != null)
                 {
-                    MessageBox.Show(linha);
+                    tbSaida.Text += Environment.NewLine + linha;                    
                     linha = leitor.ReadLine();
                 }
                 leitor.Close();
@@ -54,6 +54,9 @@ namespace TelaPrincipal
             //MessageBox.Show(Convert.ToString(dr));
             //MessageBox.Show(openFileDialog.FileName);
             tbCaminho.Text = openFileDialog.FileName;
+            
+            
+
             abrir(openFileDialog.FileName);
         }
     }

@@ -31,6 +31,7 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.tbCaminho = new System.Windows.Forms.TextBox();
+            this.tbSaida = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // openFileDialog
@@ -39,7 +40,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(197, 22);
+            this.btnBuscar.Location = new System.Drawing.Point(407, 21);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 0;
@@ -51,14 +52,25 @@
             // 
             this.tbCaminho.Location = new System.Drawing.Point(12, 24);
             this.tbCaminho.Name = "tbCaminho";
-            this.tbCaminho.Size = new System.Drawing.Size(179, 20);
+            this.tbCaminho.Size = new System.Drawing.Size(389, 20);
             this.tbCaminho.TabIndex = 1;
+            // 
+            // tbSaida
+            // 
+            this.tbSaida.Location = new System.Drawing.Point(12, 66);
+            this.tbSaida.Multiline = true;
+            this.tbSaida.Name = "tbSaida";
+            this.tbSaida.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tbSaida.Size = new System.Drawing.Size(470, 286);
+            this.tbSaida.TabIndex = 2;
+            this.tbSaida.WordWrap = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(494, 364);
+            this.Controls.Add(this.tbSaida);
             this.Controls.Add(this.tbCaminho);
             this.Controls.Add(this.btnBuscar);
             this.Name = "Form1";
@@ -73,6 +85,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox tbCaminho;
+        private System.Windows.Forms.TextBox tbSaida;
     }
 }
 

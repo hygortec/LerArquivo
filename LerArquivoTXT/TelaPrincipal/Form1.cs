@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -16,12 +17,15 @@ namespace TelaPrincipal
         public TelaImportarArquivo()
         {
             InitializeComponent();
+            //Banco b = new Banco();
+           // b.conectaBanco("localhost\\sqlexpress","banco_dados","SGA","G3st0r");
         }
 
         private void abrir(String caminho)
         {
             if (File.Exists(caminho))
             {
+                tbCaminho.Text = caminho;
                 int quantidadeLinhas = contaLinhas(caminho);
                 Stream entrada = File.Open(caminho, FileMode.Open);
                 StreamReader leitor = new StreamReader(entrada);
@@ -43,9 +47,9 @@ namespace TelaPrincipal
                     linha = leitor.ReadLine();
                     linhaAtual++;
                 }
-                MessageBox.Show("Importação efetuada com sucesso!!!");
-                progressBar1.Visible = false;
                 tbSaida.Text = conteudo;
+                MessageBox.Show("Importação efetuada com sucesso!!!");
+                progressBar1.Visible = false;                
                 leitor.Close();
                 entrada.Close();
             }
@@ -69,8 +73,7 @@ namespace TelaPrincipal
                 leitor.Close();
                 entrada.Close();
             }
-            return cont;
-
+            return cont;            
         }
 
         private void acaoBotaoBuscar(object sender, EventArgs e)
@@ -93,6 +96,11 @@ namespace TelaPrincipal
             tbCaminho.Text = openFileDialog.FileName;
             abrir(openFileDialog.FileName);
             //numLinhas(openFileDialog.FileName);
+        }
+
+        private void tbCaminho_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

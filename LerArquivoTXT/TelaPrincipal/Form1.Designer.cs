@@ -35,6 +35,7 @@
             this.tbSaida = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // openFileDialog
@@ -43,7 +44,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(407, 21);
+            this.btnBuscar.Location = new System.Drawing.Point(390, 7);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 0;
@@ -53,34 +54,46 @@
             // 
             // tbCaminho
             // 
-            this.tbCaminho.Location = new System.Drawing.Point(12, 24);
+            this.tbCaminho.Location = new System.Drawing.Point(90, 9);
             this.tbCaminho.Name = "tbCaminho";
-            this.tbCaminho.Size = new System.Drawing.Size(389, 20);
+            this.tbCaminho.Size = new System.Drawing.Size(294, 20);
             this.tbCaminho.TabIndex = 1;
+            this.tbCaminho.TextChanged += new System.EventHandler(this.tbCaminho_TextChanged);
             // 
             // tbSaida
             // 
-            this.tbSaida.Location = new System.Drawing.Point(12, 66);
+            this.tbSaida.Location = new System.Drawing.Point(12, 36);
             this.tbSaida.Multiline = true;
             this.tbSaida.Name = "tbSaida";
             this.tbSaida.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbSaida.Size = new System.Drawing.Size(470, 257);
+            this.tbSaida.Size = new System.Drawing.Size(470, 300);
             this.tbSaida.TabIndex = 2;
             this.tbSaida.WordWrap = false;
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 329);
+            this.progressBar1.Location = new System.Drawing.Point(12, 342);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(470, 23);
+            this.progressBar1.Size = new System.Drawing.Size(470, 10);
             this.progressBar1.TabIndex = 3;
             this.progressBar1.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Caminho:";
             // 
             // TelaImportarArquivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 364);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.tbSaida);
             this.Controls.Add(this.tbCaminho);
@@ -101,6 +114,7 @@
         private System.Windows.Forms.TextBox tbSaida;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label label1;
     }
 }
 

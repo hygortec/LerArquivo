@@ -57,7 +57,7 @@ namespace TelaPrincipal
         }
         private int contaLinhas(String caminho)
         {
-            string nome = "Higor";
+            
             int cont = 0;
             if (File.Exists(caminho))
             {

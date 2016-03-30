@@ -22,17 +22,54 @@ namespace TelaPrincipal
         {
             if (File.Exists(caminho))
             {
+                int quantidadeLinhas = contaLinhas(caminho);
                 Stream entrada = File.Open(caminho, FileMode.Open);
                 StreamReader leitor = new StreamReader(entrada);
                 string linha = leitor.ReadLine();
+                string conteudo = "";             
+                progressBar1.Visible = true;
+
+                
+                
+                progressBar1.Value = 0;
+                progressBar1.Maximum = quantidadeLinhas;
+
+                int linhaAtual = 0;
                 while (linha != null)
                 {
-                    tbSaida.Text += Environment.NewLine + linha;                    
+                    progressBar1.Value = linhaAtual;
+                    //tbSaida.Text +=  + linha;   
+                    conteudo += linha + Environment.NewLine;                 
                     linha = leitor.ReadLine();
+                    linhaAtual++;
                 }
+                MessageBox.Show("Importação efetuada com sucesso!!!");
+                progressBar1.Visible = false;
+                tbSaida.Text = conteudo;
                 leitor.Close();
                 entrada.Close();
             }
+
+        }
+        private int contaLinhas(String caminho)
+        {
+            int cont = 0;
+            if (File.Exists(caminho))
+            {
+                Stream entrada = File.Open(caminho, FileMode.Open);
+                StreamReader leitor = new StreamReader(entrada);
+                string linha = leitor.ReadLine();
+                
+
+                while (linha != null)
+                {                   
+                    cont++;
+                    linha = leitor.ReadLine();
+                }                
+                leitor.Close();
+                entrada.Close();
+            }
+            return cont;
 
         }
 
@@ -54,10 +91,11 @@ namespace TelaPrincipal
             //MessageBox.Show(Convert.ToString(dr));
             //MessageBox.Show(openFileDialog.FileName);
             tbCaminho.Text = openFileDialog.FileName;
-            
-            
-
             abrir(openFileDialog.FileName);
+            //numLinhas(openFileDialog.FileName);
+
+
+
         }
     }
 }

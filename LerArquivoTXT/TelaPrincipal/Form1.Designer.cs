@@ -1,6 +1,6 @@
 ﻿namespace TelaPrincipal
 {
-    partial class Form1
+    partial class TelaImportarArquivo
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaImportarArquivo));
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.tbCaminho = new System.Windows.Forms.TextBox();
@@ -75,7 +76,7 @@
             this.progressBar1.TabIndex = 3;
             this.progressBar1.Visible = false;
             // 
-            // Form1
+            // TelaImportarArquivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -84,8 +85,9 @@
             this.Controls.Add(this.tbSaida);
             this.Controls.Add(this.tbCaminho);
             this.Controls.Add(this.btnBuscar);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "TelaImportarArquivo";
+            this.Text = "Importar Arquivo";
             this.ResumeLayout(false);
             this.PerformLayout();
 

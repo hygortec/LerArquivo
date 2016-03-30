@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace TelaPrincipal
 {
-    public partial class Form1 : Form
+    public partial class TelaImportarArquivo : Form
     {
-        public Form1()
+        public TelaImportarArquivo()
         {
             InitializeComponent();
         }
@@ -93,9 +93,6 @@ namespace TelaPrincipal
             tbCaminho.Text = openFileDialog.FileName;
             abrir(openFileDialog.FileName);
             //numLinhas(openFileDialog.FileName);
-
-
-
         }
     }
 }
